@@ -9,11 +9,17 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
 
+#define DEFAULT 0
+#define LOWER   1
+#define RAISE   2
+
+
+
 / {
         keymap {
                 compatible = "zmk,keymap";
 
-                default_layer {
+                DEFAULT {
                  bindings = <
 
 // -------------------------------------------------------------------------------------
@@ -27,27 +33,27 @@
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | SHFT(RET) |
  &kp LSHFT &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &mt RSHFT RET
 // -------------------------------------------------------------------------------------
-                        &kp ESC  &kp BKSP &kp RET &kp SPACE  &kp TAB
+                   &kp LGUI  &lt RAISE BKSP &kp RET &lt LOWER  SPACE  &kp TAB
  
                        
                         >;
-                };
+                };      
 
-                lower_layer {
+                LOWER {
 // ------------------------------------------------------------------------------------
 // |    |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |      DEL    |
-// |    |  _  |  +  |  {  |  }  | "|" |   | LFT | DWN |  UP | RGT |  `  |       ~     |
+// |    |  _  |  +  |  {  |  }  | "|" |   | LFT | DWN |  UP | RGT |  `  |       \     |
 // |    | ESC | GUI | ALT | CAPS|  "  |   | HOME| END | PGUP| PGDN| PRSC| SHFT(SPACE) |
 //                       |     |     | RET | ADJ |     |
                         bindings = <
    &trans &kp EXCL  &kp AT      &kp HASH &kp DLLR &kp PRCNT      &kp CARET &kp AMPS &kp ASTRK &kp LPAR  &kp RPAR  &kp DEL
-   &trans &kp UNDER &kp PLUS    &kp LBRC &kp RBRC &kp PIPE       &kp LEFT  &kp DOWN &kp UP    &kp RIGHT &kp GRAVE &kp TILDE
+   &trans &kp UNDER &kp PLUS    &kp LBRC &kp RBRC &kp PIPE       &kp LEFT  &kp DOWN &kp UP    &kp RIGHT &kp GRAVE &kp BSLH
    &trans &kp ESC   &kp LGUI    &kp LALT &kp CLCK &kp DQT        &kp HOME  &kp END  &kp PG_UP &kp PG_DN &kp PSCRN &mt RSHFT SPACE
                                  &trans      &trans       &kp RET        &mo 3       &trans
                         >;
                 };
 
-                raise_layer {
+                RAISE {
 // ----------------------------------------------------------------------------
 // |    |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | DEL |
 // |    |  -  |  =  |  [  |  ]  |  \  |   | F1  | F2  | F3  | F4  | F5  | F6  |
