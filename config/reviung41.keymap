@@ -27,7 +27,7 @@
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | SHFT(RET) |
  &kp LSHFT &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &mt RSHFT RET
 // -------------------------------------------------------------------------------------
-                        &kp LALT  &mo 1 &kp SPACE &mo 2  &kp RGUI
+                        &kp ESC  &kp BKSP &kp RET &kp SPACE  &kp TAB
  
                        
                         >;
